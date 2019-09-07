@@ -1,0 +1,9 @@
+th {
+    height: 50px;
+    width: 18%;
+}
+
+th, td {
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
