@@ -66,3 +66,23 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+### Explication du code
+
+Pour commencer, j'ai décidé de réaliser un composant React avec une classe 
+et non avec une fonction, afin d'avoir accès à plus de fonctionnalités.
+
+Premièrement, dans cette classe on retrouve `state` afin d'initialiser des variables pour la suite. On a `repositories` un tableau qui contiendra toutes les informations nécesssaires et `isLoading` un booleen afin de savoir si les données ont bien été chargés dans le tableau.
+
+Ensuite on a `componentDidMount()` qui appelle la fonction `getData()` mais uniquement quand le composant est monté.
+La fonction `getData()` récupère les données nécessaires à l'interface, à l'aide du requête envoyer directement à l'api publique de GitHub par le biais d'une url `https://api.github.com/search/repositories?q=es6&order=desc`. Cela renvoie des données sous la forme de JSON.
+Puis ses données sont directement insérés, avec `setState()`, dans notre tableau créer précédemment dans le `state`.
+
+Enfin, on a `render()` qui permet d'utiliser les variables de notre `state` avec toutes les données correspondantes à l'intérieur
+ grâce à `componentDidMount()`. En effet, on a plus que l'affichage à gérer, pour cela on a quand même une verification que les données ont bien été chargés,
+et si c'est bien le cas alors on a un tableau avec les données qu'on souhaitait en parcourant tout notre tableau `repositories`.
+
+### Ressources utilisés
+
+https://fr.reactjs.org/
+https://developer.github.com/v3/

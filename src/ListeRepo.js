@@ -26,8 +26,6 @@ class ListeRepo extends Component {
 
     render() {
         const { isLoading, repositories } = this.state;
-        console.log(repositories);
-        for(let i=0;i<10;i++){
             return (
                 <div>
                     {isLoading ? <p>Loading</p> :
@@ -36,7 +34,7 @@ class ListeRepo extends Component {
                             <th>Nom</th>
                             <th>Description</th>
                             <th>Url</th>
-                            <th>Nombre étoile</th>
+                            <th>Nombre de stars</th>
                         </tr>
                         {repositories && Array.isArray(repositories.items) && repositories.items.map(item => (
                             <tr>
@@ -51,7 +49,6 @@ class ListeRepo extends Component {
                 </div>
             )
         }
-    }
 }
 
 export default ListeRepo;
